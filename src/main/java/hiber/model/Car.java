@@ -3,16 +3,13 @@ package hiber.model;
 import javax.persistence.*;
 
 @Entity
-//@Table(name = "cars")
 public class Car {
 
-//    @Column(name = "car_id")
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
-//    @Column(name = "model")
+
     private String model;
-//    @Column(name = "series")
     private int series;
 
     @OneToOne(fetch = FetchType.LAZY)
