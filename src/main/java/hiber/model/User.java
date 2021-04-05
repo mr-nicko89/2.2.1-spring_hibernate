@@ -3,17 +3,20 @@ package hiber.model;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "users")
 public class User{
 
    @Id
-   @GeneratedValue(strategy = GenerationType.SEQUENCE)
+   @Column(name = "id")
+   @GeneratedValue(strategy = GenerationType.AUTO)
    private Long id;
 
    private String firstName;
    private String lastName;
    private String email;
 
-   @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, optional = false, fetch = FetchType.LAZY)
+   @OneToOne(cascade = CascadeType.ALL)
+   @JoinColumn(name="car_id")
    private Car car;
 
    public User() {}
