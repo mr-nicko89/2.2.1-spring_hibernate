@@ -12,7 +12,8 @@ public class Car {
     private String model;
     private int series;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
     private User user;
 
     public Car() {
