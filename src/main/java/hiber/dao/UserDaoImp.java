@@ -21,10 +21,13 @@ public class UserDaoImp implements UserDao {
    }
 
    @Override
-
    public List<User> listUsers() {
       TypedQuery<User> query=sessionFactory.getCurrentSession().createQuery("from User");
       return query.getResultList();
    }
 
+   @Override
+   public User getUser(String model, int series) {
+      return null;
+   }
 }
